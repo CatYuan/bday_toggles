@@ -1,233 +1,144 @@
-@import url("https://fonts.googleapis.com/css?family=Rammetto+One");
-.emojer {
-  background-color: #afc2c0;
-  height: 0.4em;
-  width: 6em;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row-reverse;
-  border-radius: 0.3em;
-  user-select: none;
+@charset "UTF-8";
+h1 {
+  font-size: 5em;
+  font-weight: bold;
+  color: blue;
+  text-align: center;
+  margin-top: 0em;
+  margin-bottom: 0em;
 }
-.emojer .emobel {
-  font-family: sans-serif;
-  cursor: pointer;
-  transition: 0.2s all ease-in-out;
-  transform: translateX(-12%) scale(-1, 1);
-  user-select: none;
+h1 a {
+  text-decoration: none;
+  color: blue;
+}
+p {
+  text-align: center;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 3em;
+  margin-top: 0.1em;
+  margin-bottom: 0em;
+}
+button {
+  border-radius: 50% 50%;
+  background-color: orange;
+  width: 3em;
+  height: 3em;
   font-size: 2em;
 }
-.emojer .emoggle {
-  visibility: hidden;
-}
-.emojer .emoggle + .emobel::before {
-  content: var(--before);
-}
-.emojer .emoggle:checked + .emobel {
-  transform: translateX(130%) scale(-1, 1);
-}
-.emojer .emoggle:checked + .emobel::before {
-  content: var(--after);
-}
-.emoji-cont {
-  display: flex;
-  height: 100vh;
-  width: 100vw;
-  background-color: #ffffb3;
+
+a button{
   position: absolute;
-  top: 0;
-  left: 0;
-  padding: 0.1em;
+  left: 90%;
+  top: 3%;
+  border: none;
+  font-weight: bold;
+  user-select: none;
 }
-.emoji-sidebar {
+
+.toggle-holder{
   display: flex;
   flex-direction: column;
-  border-right: 1px solid #000;
-  font-family: 'Rammetto One', cursive;
-  text-align: center;
+  justify-content: space-between;
+  height: 73vh;
 }
-.emoji-sidebar * {
-  padding: 0.25em;
+.emoji-toggle {
+  position: relative;
+  width: 80vw;
+  margin: 40px auto;
 }
-.emoji-playground {
-  flex-basis: 60%;
-  padding: 2em;
-}
-.emoji-search {
-  margin: 1em;
-  text-align: center;
-  border-radius: 1em;
-  font-family: 'Rammetto One', cursive;
-  box-shadow: 0.1em 0.1em #4d4d4d;
-  background-color: #ffffe8;
-  caret-color: transparent;
-}
-.emoji-search:focus {
-  box-shadow: 0.1em 0.1em #008000, -0.1em -0.1em #008000;
-}
-button.mix {
-  width: 50%;
-  align-self: center;
-  background: linear-gradient(30deg, #ffffc2, #fffff0);
-  font-family: inherit;
-  border-radius: 1em;
+.emoji-toggle .well {
+  display: block;
+  background: #eee;
+  height: 5em;
+  border-radius: 10px;
   cursor: pointer;
-  min-height: 2em;
+
+
 }
-.emoji-grid {
-  display: grid;
-  grid-template-rows: repeat(6, auto);
-  grid-template-columns: repeat(3, auto);
-  overflow: hidden;
-  user-select: none;
-}
-.emoji-grid *:hover {
-  cursor: pointer;
-  transform: scale(2, 2);
-}
-.emoji-grid .emoji {
-  border-radius: 50%;
-}
-.emojer-wrapper {
+.emoji-toggle .toggle {
+  opacity: 0;
+  border: 0;
+  outline: none;
+  height: 100%;
   width: 100%;
-  height: 20%;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-}
-.emojer-wrapper:nth-child(1) {
-  margin-top: 7%;
-}
-@media screen and (max-width: 500px) {
-  .emoji-cont {
-    font-size: 5px;
-  }
-  .emoji-cont .rubix .emojer {
-    background-color: #afc2c0;
-    height: 1em;
-    width: 15em;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row-reverse;
-    border-radius: 0.3em;
-    user-select: none;
-  }
-  .emoji-cont .rubix .emojer .emobel {
-    font-family: sans-serif;
-    cursor: pointer;
-    transition: ;
-    transform: translateX(5%) scale(-0.2, 0.2);
-    user-select: none;
-    font-size: 5em;
-  }
-  .emoji-cont .rubix .emojer .emoggle {
-    visibility: hidden;
-  }
-  .emoji-cont .rubix .emojer .emoggle + .emobel::before {
-    content: var(--before);
-  }
-  .emoji-cont .rubix .emojer .emoggle:checked + .emobel {
-    transform: ;
-  }
-  .emoji-cont .rubix .emojer .emoggle:checked + .emobel::before {
-    content: var(--after);
-  }
-}
-.rubix .emojer {
-  background-color: #afc2c0;
-  height: 1em;
-  width: 15em;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row-reverse;
-  border-radius: 0.3em;
-  user-select: none;
-}
-.rubix .emojer .emobel {
-  font-family: sans-serif;
+  background: transparent;
+  position: absolute;
   cursor: pointer;
-  transition: ;
-  transform: translateX(-40%) scale(-0.5, 0.5);
+  z-index: 100;
+}
+.emoji-toggle .toggle ~ .emoji:before {
+  content: "\01F431";
+  position: absolute;
+  left: 0;
+  top: -15px;
+  font-size: 40px;
+  transition: 0.2s;
+}
+.emoji-toggle .toggle:checked ~ .emoji:before {
+  left: 100%;
+  margin-left: -1em;
+}
+.emoji-toggle .toggle ~ label {
+  white-space: nowrap;
+}
+.emoji-toggle .toggle ~ label:before {
+  position: absolute;
+  right: 100%;
+  margin-right: 5px;
+  top: 0;
+}
+.emoji-toggle .toggle ~ label:after {
+  position: absolute;
+  left: 100%;
+  margin-left: 5px;
+  top: 0;
+  
+}
+input[type="checkbox"]:focus{
   user-select: none;
+}
+.emoji-happy .toggle ~ .emoji:before {
+  content: "😢";
+  font-size: 10em;
+  margin: -0.3em;
+}
+.emoji-happy .toggle:checked ~ .emoji:before {
+  content: "😄";
+}
+
+.emoji-mad .toggle ~ .emoji:before {
+  content: "😡";
+  margin: -0.3em;
+  font-size: 10em;
+}
+.emoji-mad .toggle:checked ~ .emoji:before {
+  content: "😐";
+}
+
+.emoji-love .toggle ~ .emoji:before {
+  content: "💔";
+  margin: -0.3em;
+  font-size: 10em;
+}
+.emoji-love .toggle:checked ~ .emoji:before {
+  content: "😍";
+}
+
+@media (max-width: 700px) and (min-width: 300px) {
+  .toggle-holder{
+    justify-content: space-around;
+    height: 50vh;
+  }
+}
+
+#output{
+  display: none;
+}
+#output:target{
+  display: block;
+  text-align: center;
+  font-family: Georgia;
   font-size: 5em;
-}
-.rubix .emojer .emoggle {
-  visibility: hidden;
-}
-.rubix .emojer .emoggle + .emobel::before {
-  content: var(--before);
-}
-.rubix .emojer .emoggle:checked + .emobel {
-  transform: translateX(150%) scale(-0.7, 0.7);
-}
-.rubix .emojer .emoggle:checked + .emobel::before {
-  content: var(--after);
-}
-.example .emojer {
-  background-color: #afc2c0;
-  height: 0.6em;
-  width: 9em;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row-reverse;
-  border-radius: 0.3em;
-  user-select: none;
-}
-.example .emojer .emobel {
-  font-family: sans-serif;
-  cursor: pointer;
-  transition: ;
-  transform: translateX(-12%) scale(1, 1);
-  user-select: none;
-  font-size: 3em;
-}
-.example .emojer .emoggle {
-  visibility: hidden;
-}
-.example .emojer .emoggle + .emobel::before {
-  content: var(--before);
-}
-.example .emojer .emoggle:checked + .emobel {
-  transform: translateX(136%) scale(1, 1);
-}
-.example .emojer .emoggle:checked + .emobel::before {
-  content: var(--after);
-}
-.wedding {
-  margin-top: 7%;
-}
-.wedding .emojer {
-  background-color: #afc2c0;
-  height: 1.4em;
-  width: 21em;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row-reverse;
-  border-radius: 0.3em;
-  user-select: none;
-}
-.wedding .emojer .emobel {
-  font-family: sans-serif;
-  cursor: pointer;
-  transition: ;
-  transform: translateX(-12%) scale(1, 1);
-  user-select: none;
-  font-size: 7em;
-}
-.wedding .emojer .emoggle {
-  visibility: hidden;
-}
-.wedding .emojer .emoggle + .emobel::before {
-  content: var(--before);
-}
-.wedding .emojer .emoggle:checked + .emobel {
-  transform: translateX(190%) scale(1, 1);
-}
-.wedding .emojer .emoggle:checked + .emobel::before {
-  content: var(--after);
+  font-weight: bold;
 }
