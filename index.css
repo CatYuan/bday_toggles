@@ -5,7 +5,7 @@ h1 {
   color: blue;
   text-align: center;
   margin-top: 0em;
-  margin-bottom: 1em;
+  margin-bottom: 3em;
 }
 h1 a {
   text-decoration: none;
@@ -15,9 +15,9 @@ p {
   text-align: center;
   font-variant: small-caps;
   font-weight: bold;
-  font-size: 1em;
+  font-size: 2em;
   margin-top: 0.1em;
-  margin-bottom: 3em;
+  margin-bottom: 0em;
 }
 
 .toggle-holder {
@@ -80,21 +80,21 @@ input[type="checkbox"]:focus {
   user-select: none;
 }
 .emoji-happy .toggle ~ .emoji:before {
-  content: "😢";
+  content: "😐";
   font-size: 5em;
   margin: -0.3em;
 }
 .emoji-happy .toggle:checked ~ .emoji:before {
-  content: "😄";
+  content: "🥂";
 }
 
 .emoji-mad .toggle ~ .emoji:before {
-  content: "😡";
+  content: "😢";
   margin: -0.3em;
   font-size: 5em;
 }
 .emoji-mad .toggle:checked ~ .emoji:before {
-  content: "😐";
+  content: "😄";
 }
 
 .emoji-love .toggle ~ .emoji:before {
