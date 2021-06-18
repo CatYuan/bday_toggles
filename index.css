@@ -1,11 +1,11 @@
 @charset "UTF-8";
 h1 {
-  font-size: 5em;
+  font-size: 3em;
   font-weight: bold;
   color: blue;
   text-align: center;
   margin-top: 0em;
-  margin-bottom: 0em;
+  margin-bottom: 1em;
 }
 h1 a {
   text-decoration: none;
@@ -15,28 +15,12 @@ p {
   text-align: center;
   font-variant: small-caps;
   font-weight: bold;
-  font-size: 3em;
+  font-size: 1em;
   margin-top: 0.1em;
-  margin-bottom: 0em;
-}
-button {
-  border-radius: 50% 50%;
-  background-color: orange;
-  width: 3em;
-  height: 3em;
-  font-size: 2em;
+  margin-bottom: 3em;
 }
 
-a button{
-  position: absolute;
-  left: 90%;
-  top: 3%;
-  border: none;
-  font-weight: bold;
-  user-select: none;
-}
-
-.toggle-holder{
+.toggle-holder {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -50,11 +34,9 @@ a button{
 .emoji-toggle .well {
   display: block;
   background: #eee;
-  height: 5em;
+  height: 3em;
   border-radius: 10px;
   cursor: pointer;
-
-
 }
 .emoji-toggle .toggle {
   opacity: 0;
@@ -93,14 +75,13 @@ a button{
   left: 100%;
   margin-left: 5px;
   top: 0;
-  
 }
-input[type="checkbox"]:focus{
+input[type="checkbox"]:focus {
   user-select: none;
 }
 .emoji-happy .toggle ~ .emoji:before {
   content: "😢";
-  font-size: 10em;
+  font-size: 5em;
   margin: -0.3em;
 }
 .emoji-happy .toggle:checked ~ .emoji:before {
@@ -110,7 +91,7 @@ input[type="checkbox"]:focus{
 .emoji-mad .toggle ~ .emoji:before {
   content: "😡";
   margin: -0.3em;
-  font-size: 10em;
+  font-size: 5em;
 }
 .emoji-mad .toggle:checked ~ .emoji:before {
   content: "😐";
@@ -119,26 +100,15 @@ input[type="checkbox"]:focus{
 .emoji-love .toggle ~ .emoji:before {
   content: "💔";
   margin: -0.3em;
-  font-size: 10em;
+  font-size: 5em;
 }
 .emoji-love .toggle:checked ~ .emoji:before {
   content: "😍";
 }
 
 @media (max-width: 700px) and (min-width: 300px) {
-  .toggle-holder{
+  .toggle-holder {
     justify-content: space-around;
     height: 50vh;
   }
-}
-
-#output{
-  display: none;
-}
-#output:target{
-  display: block;
-  text-align: center;
-  font-family: Georgia;
-  font-size: 5em;
-  font-weight: bold;
 }
